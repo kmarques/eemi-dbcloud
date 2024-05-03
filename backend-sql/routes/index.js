@@ -1,8 +1,8 @@
 const { Router } = require("express");
-const userRouter = require("./user");
 const router = new Router();
 
-router.use(userRouter);
+router.use(require("./user"));
+router.use(require("./article"));
 router.get("", (req, res) => {
   res.send("Healthy");
 });

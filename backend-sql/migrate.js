@@ -1,5 +1,6 @@
 const connection = require("./models/db");
 require("./models/user");
+require("./models/article");
 
 connection
   .sync({ alter: true })
