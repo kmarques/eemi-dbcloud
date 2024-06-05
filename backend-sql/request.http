@@ -31,20 +31,19 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpY
 ### POST article with token
 POST http://localhost:3000/api/articles
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE3MTQ3MjcwMTUsImV4cCI6MTcxNDgxMzQxNX0.syMsKaZcU-U93kcdXI3d65pIdWA4Aa_BTbwbM-wdijM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE3MTc1NzM1NzUsImV4cCI6MTcxNzY1OTk3NX0.5H-3qcWXffo6NFak3lUZOwHn74Z3gLkpHSiF5YZLunE
 
 {
     "title": "Article 1",
     "content": "Content 1"
 }
 ### PUT article with token
-PUT http://localhost:3000/api/articles/1
+PUT http://localhost:3000/api/articles/2
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE3MTQ3MjcwMTUsImV4cCI6MTcxNDgxMzQxNX0.syMsKaZcU-U93kcdXI3d65pIdWA4Aa_BTbwbM-wdijM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE3MTc1NzM1NzUsImV4cCI6MTcxNzY1OTk3NX0.5H-3qcWXffo6NFak3lUZOwHn74Z3gLkpHSiF5YZLunE
 
 {
-    "title": "Article 1 updated",
-    "status": "PUBLISHED"
+    "status": "DRAFT"
 }
 
 ### DELETE article with token
