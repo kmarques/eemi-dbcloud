@@ -1,0 +1,4 @@
+export default supabase.createClient(
+  "https://eeapopwcyyrqytxqgjib.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVlYXBvcHdjeXlycXl0eHFnamliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTIxNTI4NjAsImV4cCI6MjAyNzcyODg2MH0.P0oZohJANDcxROnGGj3CBde0VrGz2SAjMWO1LNPLN-E"
+);

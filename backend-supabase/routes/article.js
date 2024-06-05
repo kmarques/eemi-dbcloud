@@ -33,6 +33,18 @@ router.post("/articles", checkAuth(), async (req, res) => {
   res.json(article);
 });
 
+router.get(
+  "/articles/:id",
+  checkAuth({ block: false }),
+  async (req, res, next) => {
+    const article = await Article.findByPk(parseInt(req.params.id, 10));
+    if (!article) return res.sendStatus(404);
+    if (article.status === "DRAFT" && article.UserId !== req.user.id)
+      return res.sendStatus(404);
+    return res.json(article);
+  }
+);
+
 router.put("/articles/:id", checkAuth(), async (req, res) => {
   let article = await Article.findByPk(parseInt(req.params.id, 10));
   if (!article) return res.sendStatus(404);

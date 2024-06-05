@@ -15,6 +15,9 @@ function createArticleItemElement(article) {
   const titleNode = document.createTextNode(
     `${article.title} - Updated at ${article.updatedAt}`
   );
-  li.appendChild(titleNode);
+  const a = document.createElement("a");
+  a.href = `/article.html?id=${article.id}`;
+  a.appendChild(titleNode);
+  li.appendChild(a);
   return li;
 }
