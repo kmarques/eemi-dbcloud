@@ -1,25 +1,19 @@
+import client from "./supabase.js";
+
 export default {
   async getAll() {
-    const headers = {};
-    if (localStorage.getItem("token")) {
-      headers["Authorization"] = "Bearer " + localStorage.getItem("token");
-    }
-    const resp = await fetch("/api/articles", {
-      headers,
-    });
-    const data = await resp.json();
-    return data;
+    const { data, status, statusText } = await client.from("Articles").select();
+    if (status === 200) return data;
+    else throw new Error();
   },
   async get(articleId) {
-    const headers = {};
-    if (localStorage.getItem("token")) {
-      headers["Authorization"] = "Bearer " + localStorage.getItem("token");
-    }
-    const resp = await fetch(`/api/articles/${articleId}`, {
-      headers,
-    });
-    const data = await resp.json();
-    return data;
+    const { data, status, statusText } = await client
+      .from("Articles")
+      .select()
+      .eq("id", articleId)
+      .single();
+    if (status === 200) return data;
+    else throw new Error();
   },
   async update(articleId, inputData) {
     const headers = {
