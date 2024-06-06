@@ -1,3 +1,4 @@
+import client from "./services/supabase.js";
 const loginNavElem = document.getElementById("nav-login");
 const userInfosSpanElem = document.getElementById("nav-userinfos");
 
@@ -12,12 +13,12 @@ if (token) {
   }
 
   if (userInfosSpanElem) {
-    const [, payload] = token.split(".");
-    const infos = JSON.parse(atob(payload));
-    const textNode = document.createTextNode(infos.user_id);
-    user.id = infos.user_id;
-    userInfosSpanElem.appendChild(textNode);
-    userInfosSpanElem.style.display = "block";
+    client.auth.getUser().then(({ data: { user: userSupabase } }) => {
+      const textNode = document.createTextNode(userSupabase.id);
+      Object.assign(user, userSupabase);
+      userInfosSpanElem.appendChild(textNode);
+      userInfosSpanElem.style.display = "block";
+    });
   }
 } else {
   if (loginNavElem) loginNavElem.style.display = "block";
