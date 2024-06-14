@@ -1,6 +1,11 @@
+## Article
+1) Pouvoir ajouter un article si connecté
+
 ## User
 1) Ajouter pseudo
 2) Ajouter avatar
+3) Afficher le pseudo et l'avatar de l'auteur de l'article
+4) Afficher le pseudo et l'avatar à la place de l'id dans la nav bar
 
 ## Comments
 1) Ajouter commentaire
